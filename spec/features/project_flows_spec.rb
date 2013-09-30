@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Project Listing" do 
+describe "Projects Listing" do 
 	describe "when visiting the index page" do
 		it "should display all projects" do
 			# create 3 projects
@@ -14,9 +14,9 @@ describe "Project Listing" do
 			expect(current_path).to eq(projects_path)
 
 			expect(page).to have_content("Listing projects")
-			expect(page).to have_content("project 1")
-			expect(page).to have_content("project 2")
-			expect(page).to have_content("project 3")
+			expect(page).to have_content("Project 1")
+			expect(page).to have_content("Project 2")
+			expect(page).to have_content("Project 3")
 		end
 	end
 end
