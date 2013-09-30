@@ -34,6 +34,7 @@ module Crowdfunder
     # config.i18n.default_locale = :de
     config.generators do |g|
       g.test_framework :rspec, :fixture => false
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
     # Configure the default encoding used in templates for Ruby 1.9.
