@@ -29,7 +29,7 @@ describe "Projects Listing" do
 			
 			visit "/"
 			expect(current_path).to eq(root_path)
-			expect(page).to
+			expect(page).to have_selector('.navbar ul li.active a', text: "Home")
 
 			click_link "Project 1"
 			expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
