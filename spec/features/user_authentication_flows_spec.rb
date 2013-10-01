@@ -50,9 +50,9 @@ describe "User Authentication" do
 
     it "should successfully log in" do
         visit '/'
-        find('.navbar').has_no_link?('logout').should be_true
+        page.has_no_link?('Logout').should be_true
         user = setup_signed_in_user
-        find('.navbar').has_link?("logout").should be_true
+        page.has_link?("Logout").should be_true
     end
 
     it "should unseccessfully log in" do
@@ -64,12 +64,12 @@ describe "User Authentication" do
       expect(page).to have_content("Login failed")
     end
 
-    it "should successfully logout" do
+    it "should successfully Logout" do
       user = setup_signed_in_user
       visit '/'
-      find('.navbar').click_link 'logout'
+      click_link 'Logout'
       expect(page).to have_content("Bye")
-      find('.navbar').has_no_link('logout')
+      # has_no_link('Logout')
     end
   end
 end

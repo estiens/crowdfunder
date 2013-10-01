@@ -9,6 +9,7 @@ gem 'rails', '3.2.14'
 gem 'pg'
 gem 'sorcery'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,12 +32,14 @@ group :development do
   gem 'better_errors' # makes the errors we see in the browser more descriptive
   gem "binding_of_caller"
   gem 'pry-rails'
+  gem 'debugger'
 end
 
 group :test do 
   gem 'rspec-rails', '~> 2.0' # using rspec instead of test unit
   gem "factory_girl_rails" 
   gem "capybara" # needed for our integration tests, which we'll talk about more later
+  gem 'debugger'
 end
 
 gem 'jquery-rails'
