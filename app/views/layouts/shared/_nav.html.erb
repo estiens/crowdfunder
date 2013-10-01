@@ -10,6 +10,13 @@
           <li class="<%= 'active' if controller_name == "projects" %>">
             <%= link_to 'Projects', :projects %>
           </li>
+          <li>
+          <% if current_user %>
+              <%= link_to "Logout", :logout %>
+          <% else %>
+            <%= link_to 'Sign Up', :new_user %> 
+          <% end %>
+          </li>
         </ul>
       </div>
       </div>

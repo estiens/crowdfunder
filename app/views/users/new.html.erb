@@ -2,14 +2,14 @@
 
 <%= form_for(@user) do |f|%>
 <%= f.label "First Name"%>
-<%= f.text_field :first_name%>
-<%= f.label "Last Name"%>
-<%= f.text_field :last_name%>
-<%= f.label "Email"%>
-<%= f.email_field :email%>
+<%= f.text_field :first_name %>
+<%= f.label "Last Name" %>
+<%= f.text_field :last_name %>
+<%= f.label "Email" %>
+<%= f.email_field :email %>
 <%= f.label "Password"%>
-<%= f.password_field :password%>
-<%= f.label "Enter your password again"%>
-<%= f.password_field :password_confirmation%>
-<%= f.submit %>
+<%= f.password_field :password %>
+<%= f.label "Enter your password again" %>
+<%= f.password_field :password_confirmation %>
+<%= f.submit "Create Account" %>
 <% end %>

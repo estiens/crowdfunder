@@ -21,7 +21,6 @@ describe "User Authentication" do
     	click_button "Create Account"
 
     	expect(current_path).to eq(root_path)
-    	page.should have_content("Account created")
     	expect(page).to have_content("Account created")
 
     	within(:css, '.navbar') do
@@ -40,9 +39,7 @@ describe "User Authentication" do
     	#Should redirect to users_path and
     	expect(current_path).to eq(users_path)
     	#no message saying 'Account created' should appear
-
-
-    	expect(page).to have_no_content("Account Created")
+        expect(page).to have_no_content("Account Created")
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
     end
   end
