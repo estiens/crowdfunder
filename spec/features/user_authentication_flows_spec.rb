@@ -41,6 +41,10 @@ describe "User Authentication" do
     	#no message saying 'Account created' should appear
         expect(page).to have_no_content("Account Created")
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+
+      within(:css, ".alert") do
+        have_content("try again")
+      end
     end
   end
 end
