@@ -3,6 +3,9 @@ Crowdfunder::Application.routes.draw do
     resources :pledges, :only => [:new, :create]
   end
 
+  namespace :my do
+    resources :projects
+  end
   resources :user_sessions
   root :to => 'static_page#index'
   resources :users, :except => [:index]
