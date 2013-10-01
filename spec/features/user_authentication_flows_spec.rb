@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "User Authentication" do
   describe "when visiting the sign in page" do
+
     it "should successfully register a user" do
 
     	visit "/users/new"
@@ -46,5 +47,32 @@ describe "User Authentication" do
         have_content("try again")
       end
     end
+
+    it "should successfully log in" do
+        visit '/'
+        find('.navbar').has_no_link?('logout').should be_true
+        user = setup_signed_in_user
+        find('.navbar').has_link?("logout").should be_true
+    end
+
+    it "should unseccessfully log in" do
+      visit '/user_sessions/new'
+      fill_in "email", with: "a@b.com"
+      fill_in "password", with: "invalid creds"
+      click_button "Login"
+      expect(current_path).to eq(user_sessions_path)
+      expect(page).to have_content("Login failed")
+    end
+
+    it "should successfully logout" do
+      user = setup_signed_in_user
+      visit '/'
+      find('.navbar').click_link 'logout'
+      expect(page).to have_content("Bye")
+      find('.navbar').has_no_link('logout')
+    end
   end
 end
+
+
+
