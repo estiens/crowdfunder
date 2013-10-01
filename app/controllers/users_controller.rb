@@ -6,11 +6,13 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(params[:user])
+    
     if @user.save
+      auto_login(@user)
+      flash[:notice] = "Account created"
       redirect_to root_path
     else
-      flash[:error] = "There was a problem with your registration, please try again."
-      redirect_to users_path
+      render :new
     end
 	end
 

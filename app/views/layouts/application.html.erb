@@ -9,6 +9,13 @@
 <body>
 <%= render 'layouts/shared/nav' %>
 
+<div class="flashes">
+
+  <% flash.each do |name,msg| %>
+  <%= "#{msg}" %>
+<% end %>
+</div>
+
 <div class="container">
   <%= yield %>
 </div>
