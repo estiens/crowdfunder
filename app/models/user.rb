@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
   validates_confirmation_of :password, :message => "should match confirmation", :if => :password
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 end
+
