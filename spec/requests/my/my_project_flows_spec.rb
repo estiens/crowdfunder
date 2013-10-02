@@ -56,5 +56,20 @@ describe "Project Listing" do
 
       expect(current_path).to eq(my_projects_path)
     end
+
+    it "should display navigation" do
+      user = setup_signed_in_user
+
+      visit '/'
+      page.find('.navbar ul').click_link("My Projects")
+      expect(current_path).to eq(my_projects_path)
+      
+      #my proeject nav element should be active on my project page
+      expect(page).to have_selector('.navbar ul li.active a', count: 1)
+
+      # the nav elemet should still be active on the new project page
+      click_link "New Project"
+      expect(find('.navbar ul li.active a').text).to eq("My Projects")
+    end
   end
 end

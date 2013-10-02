@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "Projects Listing" do 
 	describe "when visiting the index page" do
+
 		it "should display all projects" do
 			# create 3 projects
 			project1 = FactoryGirl.create(:project, :title => 'Project 1')
@@ -24,7 +25,6 @@ describe "Projects Listing" do
       # Expect on this page the first h1 has the text project1's title
       expect(page).to have_selector('h1:first', text: project1.title)
       expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
-
 		end
 
 		it "should display the navigation"  do
@@ -36,6 +36,9 @@ describe "Projects Listing" do
 
 			# click_link "Project 1"
 			# expect(page).to have_selector('.navbar ul li.active a', text: "Projects")
+
+			expect(page).to have_selector('.navbar ul li.active a', count: 1)
 		end
+
 	end
 end
