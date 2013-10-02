@@ -1,3 +1,17 @@
-<%= render "form" %>
+
+<%= form_for ([:my, @project]) do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+  
+  <%= f.label "Teaser" %>
+  <%= f.text_field :teaser %>
+
+  <%= f.label "Description" %>
+  <%= f.text_area :description %>
+
+  <%= f.label "Goal" %>
+  <%= f.number_field :goal %>
+
+
 	<%= f.submit "Update Project" %>
 <% end %>
