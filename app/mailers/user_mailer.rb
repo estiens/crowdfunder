@@ -4,11 +4,11 @@ class UserMailer < ActionMailer::Base
   def new_pledge(pledge)
     @pledge = pledge
     @project = @pledge.project
-    @user = @project.user
+    @owner = @project.user
     @backer = @pledge.user
  
 
-    mail(:to => @user.email, :subject => "Your project received some backing on CrowdFunder.")
+    mail(:to => @owner.email, :subject => "Your project received some backing on CrowdFunder.")
   end
 
 end

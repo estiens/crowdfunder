@@ -1,12 +1,12 @@
 <p>
-  Hey <%= @user.name %>,
+  Hey <%= @owner.name %>,
 </p>
 
 <p>
   Good news. 
   Your project <%= link_to @project.title, project_url(@project) %> 
   was just backed by <em><%= @backer.name %></em> 
-  for <strong><%= number_to_currency @pledge.amount %></strong>.
+  for <strong><%= number_to_currency(@pledge.amount) %></strong>.
 </p>
 
 <hr/>
