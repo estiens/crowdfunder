@@ -35,17 +35,11 @@ describe "Pledge Listing" do
 
       # Verify that the pledge was created with the right attributes
       pledge = Pledge.order(:id).last
-
-
       expect(pledge.user).to eq(user)
-
-
       expect(pledge.project).to eq(@project)
-
-
       expect(pledge.amount).to eq(100)    
 
-      # expect(last_email.to).to eq([@project.user.email])
+      expect(last_email.to).to eq([@project.user.email])
     end
   end
 end
