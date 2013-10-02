@@ -12,6 +12,10 @@ class ProjectsController < ApplicationController
     @project=Project.new
   end
 
+  def nav_state
+    @nav = :projects
+  end
+
   # def create 
   #   @project = Project.new(params[:project])
   #   if @project.save

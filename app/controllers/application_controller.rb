@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :nav_state
 
   protected
 
@@ -7,6 +8,10 @@ class ApplicationController < ActionController::Base
   
   def not_authenticated
     redirect_to login_path, :alert => "Please login first."
+  end
+
+  def nav_state
+  	
   end
 
 end
