@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UserMailer do
+describe "UserMailer" do
   it "new pledge" do  
     project = FactoryGirl.create :project
     pledge  = FactoryGirl.create :pledge, project: project
