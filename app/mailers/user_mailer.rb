@@ -6,6 +6,7 @@ class UserMailer < ActionMailer::Base
     @project = @pledge.project
     @user = @project.user
     @backer = @pledge.user
+ 
 
     mail(:to => @user.email, :subject => "Your project received some backing on CrowdFunder.")
   end
