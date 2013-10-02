@@ -32,14 +32,13 @@ group :development do
   gem 'better_errors' # makes the errors we see in the browser more descriptive
   gem "binding_of_caller"
   gem 'pry-rails'
-  gem 'debugger'
+  gem 'letter_opener'
 end
 
 group :test do 
   gem 'rspec-rails', '~> 2.0' # using rspec instead of test unit
   gem "factory_girl_rails" 
   gem "capybara" # needed for our integration tests, which we'll talk about more later
-  gem 'debugger'
 end
 
 gem 'jquery-rails'
@@ -57,4 +56,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
