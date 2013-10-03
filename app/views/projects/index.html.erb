@@ -2,7 +2,8 @@
 
 <div class="projects">
 <h2> Listing projects </h2>
-<% @projects.each do |project|%>
-<%= link_to(project.title, project ) %>
+<% @projects.each do |project| %>
+<%= render project, :locals => {:project => project} %>
 <% end %>
 </div>
+<%= paginate @projects %>
