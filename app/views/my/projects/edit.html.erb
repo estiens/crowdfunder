@@ -16,4 +16,5 @@
 	<%= f.submit "Update Project" %>
 <% end %>
 
-<%= link_to "Manage Images", my_project_images_path(@project) %>
+<%= link_to "Manage Images", my_project_images_path(@project) %> | 
+<%= link_to 'Delete Project', project_path(@project), :confirm => 'Are you sure you want to delete this product?', :method => :delete %>

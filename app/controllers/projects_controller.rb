@@ -17,24 +17,9 @@ class ProjectsController < ApplicationController
   def nav_state
     @nav = :projects
   end
-
-  # def create 
-  #   @project = Project.new(params[:project])
-  #   if @project.save
-  #     redirect_to @project
-  #   else
-  #     render :new
-  #   end
-  # end
-
-  # def update
-  #   @project = Project.find(params[:id])
-  #   if @project.update(params)
-  #     redirect_to @project
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to my_projects_path
+  end
 end
