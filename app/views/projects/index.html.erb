@@ -2,8 +2,8 @@
 
 <div class="projects">
 <h2> Listing projects </h2>
-<% @projects.each do |project| %>
-<%= render project, :locals => {:project => project} %>
+<% @projects.each do |proj| %>
+<%= render "showproject", :project => proj %>
 <% end %>
 </div>
 <%= paginate @projects %>

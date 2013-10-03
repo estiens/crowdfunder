@@ -1,5 +1,13 @@
 <% @projects.each do |pro| %>
 	<div class="project">
 		<h2><%= pro.title %></h2>
+    <%= pro.teaser %>
+    <%= pro.description %>
+    <% pro.images.each do |i| %>
+      <div class = "image"> 
+      <img src= "<%= i.file %>" width="200px" />    
+      </div>
+    <% end %>
+    <%= link_to "Edit", edit_my_project_path(pro) %>
 	</div>
 <% end %>
