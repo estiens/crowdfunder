@@ -71,5 +71,18 @@ describe "Project Listing" do
       click_link "New Project"
       expect(find('.navbar ul li.active a').text).to eq("My Projects")
     end
+
+    it "should be able to delete my project" do
+      me = setup_signed_in_user
+      project = FactoryGirl.create :project, user: me
+
+      visit edit_my_project_path(project)
+
+      assert has_link?("Delete Project")
+      click_link "Delete Project"
+
+      expect(page).to have_content('deleted')
+      expect(Project.find_by_id(project.id)).to eq(nil)
+    end
   end
 end
