@@ -40,5 +40,28 @@ describe "Projects Listing" do
 			expect(page).to have_selector('.navbar ul li.active a', count: 1)
 		end
 
+		it "should have pagination" do 
+	      user = FactoryGirl.create :user
+
+	      50.times { |i| FactoryGirl.create(:project, title: "Project #{i}", user: user) }
+
+	      visit "/projects"
+
+	      # Expect the most recently created projects on page 1 (8 PER PAGE)
+	    
+	      expect(page).to have_content('Project 49')
+	     
+	      expect(page).to have_no_content('Project 41')
+
+	      expect(page).to have_selector('li.project', count: 8)
+
+	      # Expect pagination link and click page 2
+	      page.find('.pagination').click_link '2'
+
+	      # Expect page 2 to have the next 8 projects
+	      expect(page).to have_content('Project 41')
+
+	      expect(page).to have_no_content('Project 32')
+	  	end
 	end
 end
